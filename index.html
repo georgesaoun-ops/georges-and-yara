@@ -508,7 +508,8 @@ function submitForm() {
     document.getElementById("attending-count").style.display = "block";
     document.getElementById("rsvp-countdown").style.display = "flex";
   }
-  const thankYouText = attending ? "Thank you for confirming your presence. We can't wait to celebrate this day with you!" : "Thank you for letting us know.";
+  const t = translations[currentLang];
+  const thankYouText = attending ? t.thankYouYes : t.thankYouNo;
   const msgEl = document.getElementById("thank-you-msg");
   msgEl.textContent = thankYouText; msgEl.classList.remove("visible"); setTimeout(()=>msgEl.classList.add("visible"),10);
   document.getElementById("edit-btn").style.display="inline-block";
@@ -606,7 +607,11 @@ const translations = {
     deadline:'Please reply before June 7, 2026', wishes:'Share your love and wishes:',
     yes:'Yes', no:'No', submit:'Submit', mapsLabel:'Find the venue',
     punctual:'We kindly ask guests to arrive a little early so the ceremony may begin promptly at the scheduled time.',
-    weWillBe:'We will be', attending2:'attending'
+    weWillBe:'We will be', attending2:'attending',
+    attendingCount: 'Number of persons attending:',
+  thankYouYes: "Thank you for confirming your presence. We can't wait to celebrate this day with you!",
+  thankYouNo: 'Thank you for letting us know.',
+  needChange: 'Need to make a change?',
   },
   ar: {
     quote: '«مَا جَمَعَهُ اللهُ لَا يُفَرِّقُهُ إِنْسَان»', quoteRef: 'مرقس ١٠:٩',
@@ -621,6 +626,10 @@ const translations = {
     yes:'نعم', no:'لا', submit:'إرسال', mapsLabel:'ابحث عن المكان',
     punctual:'نرجو من الضيوف الكرام الحضور قبل الموعد حتى يبدأ الاكليل في الوقت المحدد',
     weWillBe:'سنحضر', attending2:'أشخاص',
+    attendingCount: 'عدد الحاضرين:',
+    thankYouYes: 'شكراً لتأكيد حضوركم. بانتظار الاحتفال بهذا اليوم معكم!',
+    thankYouNo: 'شكراً لإعلامنا.',
+    needChange: 'هل تريدون التعديل؟',
   }
 };
 
@@ -646,7 +655,8 @@ function setLang(lang) {
   document.getElementById('submit').textContent = t.submit;
   document.querySelector('.maps-label').textContent = t.mapsLabel;
   document.getElementById('punctual-note').textContent = t.punctual;
-  document.getElementById('couple-names').textContent = 'Georges & Yara';
+  document.getElementById('attending-count').childNodes[0].textContent = t.attendingCount + ' ';
+  document.getElementById('changed-mind').textContent = t.needChange;
   const gcBefore = document.getElementById('gc-before');
   const gcAfter = document.getElementById('gc-after');
   if (gcBefore) gcBefore.textContent = t.weWillBe;
