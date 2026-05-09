@@ -394,6 +394,17 @@ setInterval(() => { slides[current].classList.remove('active'); current=(current
 
 function enterInvitation() {
   const landing = document.getElementById('landing');
+
+  // Attempt to start music on this user gesture
+  const music = document.getElementById('bg-music');
+  music.play().then(() => {
+    document.getElementById('icon-playing').style.display='block';
+    document.getElementById('icon-muted').style.display='none';
+    musicPlaying=true;
+    document.removeEventListener('click', startMusicOnce);
+    document.removeEventListener('touchstart', startMusicOnce);
+  }).catch(()=>{});
+
   // Show carousel behind landing BEFORE fade starts
   document.getElementById('carousel-bg-fixed').style.display='block';
   document.getElementById('invitation').style.display='block';
