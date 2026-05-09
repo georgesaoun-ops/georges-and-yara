@@ -310,7 +310,7 @@ button#edit-btn:hover { background:#fff3f0; }
         <button id="edit-btn" onclick="editResponse()">Edit</button>
         <p id="wishes-label">Share your love and wishes:</p>
         <textarea id="love-message" placeholder="Write your message here..."></textarea>
-        <button id="submit" onclick="submitForm()" disabled>Submit</button>
+        <button id="submit" onclick="" disabled>Submit</button>
       </div>
     </div>
 
@@ -453,10 +453,6 @@ function submitForm() {
   if (attending === null) return;
   const submitBtn = document.getElementById("submit");
   submitBtn.textContent = "Sending..."; submitBtn.disabled = true;
-
-  const card = document.querySelector(".content-card.rsvp-section");  // ← add
-  card.style.minHeight = card.offsetHeight + "px";                    // ← add
-
   const total = parseInt(guests) || 1;
   const finalGuests = attending ? (total >= 2 ? confirmedGuests : 1) : 0;
 
@@ -493,8 +489,6 @@ function submitForm() {
 
 function editResponse() {
   localStorage.removeItem("rsvp_submitted_"+name); localStorage.removeItem("rsvp_message_"+name);
-  const card = document.querySelector(".content-card.rsvp-section");
-  card.style.minHeight = ""; 
   document.querySelector(".rsvp-buttons").style.display="flex";
   document.getElementById("love-message").style.display="block";
   document.getElementById("attending-question").style.display="block";
