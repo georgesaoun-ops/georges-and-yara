@@ -225,7 +225,7 @@ button#edit-btn:hover { background:#fff3f0; }
         <strong>Mr. Gergi &amp; Mrs. Maha Habib</strong>
       </p>
       <p class="invite-text" style="color:rgba(255,255,255,0.85);">request the honor of your presence at the wedding of their son and daughter</p>
-      <h1 style="color:#e8c97a; margin-bottom:40px; padding:0 10px 10px 15px;">Georges &amp; Yara</h1>
+      <h1 id="couple-names" style="color:#e8c97a; margin-bottom:40px; padding:0 10px 10px 15px;">Georges &amp; Yara</h1>
     </div>
 
     <!-- SECTION 2: Venue -->
@@ -608,6 +608,7 @@ const translations = {
     yes:'Yes', no:'No', submit:'Submit', mapsLabel:'Find the venue',
     punctual:'We kindly ask guests to arrive a little early so the ceremony may begin promptly at the scheduled time.',
     weWillBe:'We will be', attending2:'attending',
+    coupleNames:'Georges & Yara',
   },
   ar: {
     quote: '«مَا جَمَعَهُ اللهُ لَا يُفَرِّقُهُ إِنْسَان»', quoteRef: 'مرقس ١٠:٩',
@@ -623,6 +624,7 @@ const translations = {
     yes:'نعم', no:'لا', submit:'إرسال', mapsLabel:'ابحث عن المكان',
     punctual:'نرجو من الضيوف الكرام الحضور قبل الموعد حتى يبدأ الاكليل في الوقت المحدد',
     weWillBe:'سنحضر', attending2:'أشخاص',
+    coupleNames:'جورج و يارا',
   }
 };
 
@@ -648,6 +650,7 @@ function setLang(lang) {
   document.getElementById('submit').textContent = t.submit;
   document.querySelector('.maps-label').textContent = t.mapsLabel;
   document.getElementById('punctual-note').textContent = t.punctual;
+  document.getElementById('couple-names').textContent = t.coupleNames;
   const gcBefore = document.getElementById('gc-before');
   const gcAfter = document.getElementById('gc-after');
   if (gcBefore) gcBefore.textContent = t.weWillBe;
