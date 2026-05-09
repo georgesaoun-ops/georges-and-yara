@@ -226,10 +226,10 @@ button#edit-btn:hover { background:#fff3f0; }
         <p class="venue-subtitle">Where we celebrate</p>
         <img src="bherdoknobg.png" alt="Couvent St. Georges Bherdok" style="width:100%; max-width:340px; object-fit:contain;">
         <h3 class="venue-name">Couvent St. Georges</h3>
+        <p id="venue-location" class="venue-address">Bherdok, Beit Chabeb</p>
         <div class="venue-card-divider"></div>
         <p class="venue-date">Sunday, June 28, 2026 &nbsp;·&nbsp; 6:00 PM</p>
         <p id="punctual-note" style="font-style:italic; font-size:0.9rem; opacity:0.8; color:rgba(255,255,255,0.8);">We kindly ask guests to arrive a little early so the ceremony may begin promptly at the scheduled time.</p>
-        <p id="venue-location" class="venue-address">Bherdok, Beit Chabeb</p>
         <p id="venue-note" style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:#c8a96a; margin:0;">Ceremony followed by a welcome drink, dinner and celebration.</p>
         <a class="maps-btn" href="https://maps.app.goo.gl/mPbzVzFXPR2gNSicA" target="_blank" rel="noopener">
           <div class="maps-icon">
@@ -628,7 +628,11 @@ function setLang(lang) {
   document.querySelector('.venue-subtitle').textContent = t.venueSub;
   document.querySelector('.venue-date').innerHTML = t.venueDate.replace('\n', '<br>');
   document.getElementById('venue-location').textContent = t.venueLocation;
-  document.getElementById('venue-note').textContent = t.venueNote;
+  const venueNote = document.getElementById('venue-note');
+  venueNote.textContent = t.venueNote;
+  venueNote.style.fontSize = lang === 'ar' ? '1rem' : '0.75rem';
+  venueNote.style.letterSpacing = lang === 'ar' ? '0' : '2px';
+  venueNote.style.textTransform = lang === 'ar' ? 'none' : 'uppercase';
   document.querySelectorAll('.venue-title')[1].textContent = t.giftTitle;
   document.querySelector('#section-gift .invite-text').textContent = t.giftText;
   document.querySelectorAll('.venue-title')[2].textContent = t.rsvpTitle;
