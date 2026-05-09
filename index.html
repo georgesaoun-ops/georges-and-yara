@@ -606,8 +606,7 @@ const translations = {
     deadline:'Please reply before June 7, 2026', wishes:'Share your love and wishes:',
     yes:'Yes', no:'No', submit:'Submit', mapsLabel:'Find the venue',
     punctual:'We kindly ask guests to arrive a little early so the ceremony may begin promptly at the scheduled time.',
-    weWillBe:'We will be', attending2:'attending',
-    coupleNames:'Georges & Yara',
+    weWillBe:'We will be', attending2:'attending'
   },
   ar: {
     quote: '«مَا جَمَعَهُ اللهُ لَا يُفَرِّقُهُ إِنْسَان»', quoteRef: 'مرقس ١٠:٩',
@@ -622,7 +621,6 @@ const translations = {
     yes:'نعم', no:'لا', submit:'إرسال', mapsLabel:'ابحث عن المكان',
     punctual:'نرجو من الضيوف الكرام الحضور قبل الموعد حتى يبدأ الاكليل في الوقت المحدد',
     weWillBe:'سنحضر', attending2:'أشخاص',
-    coupleNames:'جورج و يارا',
   }
 };
 
@@ -648,11 +646,7 @@ function setLang(lang) {
   document.getElementById('submit').textContent = t.submit;
   document.querySelector('.maps-label').textContent = t.mapsLabel;
   document.getElementById('punctual-note').textContent = t.punctual;
-  const namesEl = document.getElementById('couple-names');
-  namesEl.textContent = t.coupleNames;
-  namesEl.style.fontFamily = lang === 'ar' ? "'EB Garamond', serif" : "'Great Vibes', cursive";
-  namesEl.style.fontStyle = lang === 'ar' ? 'italic' : 'normal';
-  namesEl.style.fontSize = lang === 'ar' ? 'clamp(36px,8vw,60px)' : '';
+  document.getElementById('couple-names').textContent = 'Georges & Yara';
   const gcBefore = document.getElementById('gc-before');
   const gcAfter = document.getElementById('gc-after');
   if (gcBefore) gcBefore.textContent = t.weWillBe;
