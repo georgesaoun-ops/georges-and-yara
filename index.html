@@ -603,7 +603,7 @@ const translations = {
     quote: '«مَا جَمَعَهُ اللهُ لَا يُفَرِّقُهُ إِنْسَان»', quoteRef: 'مرقس ١٠:٩',
     family: '<strong>السيد جهاد والسيدة كارولين عون</strong><br><em>و</em><br><strong>السيد جرجي والسيدة مها حبيب</strong>',
     invite: 'يتشرفون بدعوتكم إلى إكليل ولديهم',
-    venueTitle:'المكان', venueSub:'حيث نحتفل', venueDate:'الأحد، ٢٨ حزيران ٢٠٢٦ في تمام الساعة ٦:٠٠ مساءً',
+    venueTitle:'المكان', venueSub:'حيث نحتفل', venueDate:'الأحد، ٢٨ حزيران ٢٠٢٦\nالساعة ٦:٠٠ مساءً',
     venueNote:'مراسم الزفاف تليها مشروبات ترحيب وعشاء واحتفال.',
     countdownTitle:'العد التنازلي', giftTitle:'لمن يرغب بالإهداء',
     giftText:'يسرّنا أن نحتفل بهذه المناسبة الجميلة برفقتكم. لمن يرغب، قائمة هدايا متاحة أدناه.',
@@ -622,7 +622,7 @@ function setLang(lang) {
   document.querySelector('.invite-text').textContent = t.invite;
   document.querySelectorAll('.venue-title')[0].textContent = t.venueTitle;
   document.querySelector('.venue-subtitle').textContent = t.venueSub;
-  document.querySelector('.venue-date').textContent = t.venueDate;
+  document.querySelector('.venue-date').innerHTML = t.venueDate.replace('\n', '<br>');
   document.querySelectorAll('.venue-address')[1].textContent = t.venueNote;
   document.querySelectorAll('.venue-title')[1].textContent = t.giftTitle;
   document.querySelector('#section-gift .invite-text').textContent = t.giftText;
