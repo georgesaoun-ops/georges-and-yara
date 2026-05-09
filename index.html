@@ -118,22 +118,13 @@ button#edit-btn:hover { background:#fff3f0; }
 .gc-drop-item.active { color:#e8c97a; background:rgba(200,169,106,0.15); }
 .gc-drop-divider { height:1px; background:rgba(200,169,106,0.2); margin:0 12px; }
 
-@media (max-width:480px) {
-  h1 { font-size:clamp(50px,15vw,80px); white-space:nowrap; }
-  .quote { font-size:1rem; }
-  .family { font-size:1rem; }
-  .invite-text { font-size:1rem; }
-  .rsvp-section p { font-size:1rem; }
-  .content-card { padding:28px 20px; }
-}
-
-@media (min-width:481px) and (max-width:768px) {
-  .quote { font-size:1.15rem; }
-  .family { font-size:1.9rem; }
-  .invite-text { font-size:1.6rem; }
-  .rsvp-section p { font-size:1.2rem; }
-  .content-card { padding:32px 24px; }
-  h1 { font-size:clamp(60px,14vw,100px); }
+@media (max-width:768px) {
+  .quote { font-size:clamp(1rem, 3vw, 1.2rem); }
+  .family { font-size:clamp(1.2rem, 4vw, 2rem); }
+  .invite-text { font-size:clamp(1.1rem, 3.5vw, 1.7rem); }
+  .rsvp-section p { font-size:clamp(1rem, 3vw, 1.2rem); }
+  .content-card { padding:clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px); }
+  h1 { font-size:clamp(50px, 14vw, 100px); white-space:nowrap; }
 }
 
 .content-card, .hero-text { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
