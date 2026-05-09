@@ -628,6 +628,7 @@ function setLang(lang) {
   document.querySelector('.venue-subtitle').textContent = t.venueSub;
   document.querySelector('.venue-date').innerHTML = t.venueDate.replace('\n', '<br>');
   document.getElementById('venue-location').textContent = t.venueLocation;
+  document.getElementById('venue-note').textContent = t.venueNote;
   document.querySelectorAll('.venue-title')[1].textContent = t.giftTitle;
   document.querySelector('#section-gift .invite-text').textContent = t.giftText;
   document.querySelectorAll('.venue-title')[2].textContent = t.rsvpTitle;
