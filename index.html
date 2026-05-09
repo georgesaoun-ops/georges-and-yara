@@ -633,8 +633,6 @@ function setLang(lang) {
   document.querySelector('.quote').innerHTML = t.quote + '<br><span style="color:rgba(255,255,255,0.7);">' + t.quoteRef + '</span>';
   document.querySelector('.family').innerHTML = t.family;
   document.querySelector('.invite-text').textContent = t.invite;
-  document.querySelectorAll('.venue-title')[0].textContent = t.venueTitle;
-  document.querySelector('.venue-subtitle').textContent = t.venueSub;
   document.querySelector('.venue-date').innerHTML = t.venueDate.replace('\n', '<br>');
   document.getElementById('venue-location').textContent = t.venueLocation;
   const venueNote = document.getElementById('venue-note');
@@ -642,9 +640,7 @@ function setLang(lang) {
   venueNote.style.fontSize = lang === 'ar' ? '1rem' : '0.75rem';
   venueNote.style.letterSpacing = lang === 'ar' ? '0' : '2px';
   venueNote.style.textTransform = lang === 'ar' ? 'none' : 'uppercase';
-  document.querySelectorAll('.venue-title')[1].textContent = t.giftTitle;
   document.querySelector('#section-gift .invite-text').textContent = t.giftText;
-  document.querySelectorAll('.venue-title')[2].textContent = t.rsvpTitle;
   document.getElementById('attending-question').textContent = t.attending;
   document.getElementById('reply-deadline').textContent = t.deadline;
   document.getElementById('wishes-label').textContent = t.wishes;
@@ -653,10 +649,10 @@ function setLang(lang) {
   document.getElementById('submit').textContent = t.submit;
   document.querySelector('.maps-label').textContent = t.mapsLabel;
   document.getElementById('punctual-note').textContent = t.punctual;
- const gcBefore = document.getElementById('gc-before');
-const gcAfter = document.getElementById('gc-after');
-if (gcBefore) gcBefore.textContent = t.weWillBe;
-if (gcAfter) gcAfter.textContent = t.attending2;
+  const gcBefore = document.getElementById('gc-before');
+  const gcAfter = document.getElementById('gc-after');
+  if (gcBefore) gcBefore.textContent = t.weWillBe;
+  if (gcAfter) gcAfter.textContent = t.attending2;
 }
 
 </script>
