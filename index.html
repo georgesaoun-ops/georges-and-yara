@@ -15,11 +15,13 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 #music-btn svg { width:18px; height:18px; transition:opacity 0.3s ease; }
 
 /* ── LANG SWITCHER ── */
-#lang-switcher { position:fixed; top:20px; left:20px; z-index:999; display:none; }
-#lang-btn { font-family:'EB Garamond',serif; font-size:0.85rem; padding:6px 16px; border-radius:30px; border:1px solid rgba(200,169,106,0.6); background:transparent; color:#74583e; cursor:pointer; display:flex; align-items:center; gap:7px; letter-spacing:1px; }
-#lang-menu { display:none; position:absolute; top:calc(100% + 6px); left:0; background:rgba(255,247,238,0.97); border:1px solid rgba(200,169,106,0.6); border-radius:16px; overflow:hidden; min-width:130px; box-shadow:0 4px 16px rgba(116,88,62,0.12); }
-.lang-option { padding:10px 18px; font-family:'EB Garamond',serif; font-size:0.9rem; color:#74583e; cursor:pointer; letter-spacing:1px; text-align:left; transition:background 0.2s ease; }
-.lang-option:hover { background:rgba(200,169,106,0.12); }
+#lang-switcher { position:fixed; top:50%; left:0; transform:translateY(-50%); z-index:999; display:none; }
+#lang-btn { font-family:'EB Garamond',serif; font-size:0.8rem; padding:8px 14px 8px 10px; border-radius:0 20px 20px 0; border:1px solid rgba(200,169,106,0.4); border-left:none; background:rgba(0,0,0,0.35); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); color:#c8a96a; cursor:pointer; display:flex; align-items:center; gap:7px; letter-spacing:1px; transition:background 0.3s ease, border-color 0.3s ease; }
+#lang-btn:hover { background:rgba(200,169,106,0.2); border-color:rgba(200,169,106,0.7); }
+#lang-btn .lang-dot { width:6px; height:6px; border-radius:50%; background:#c8a96a; opacity:0.8; flex-shrink:0; }
+#lang-menu { display:none; position:absolute; top:50%; left:calc(100% + 8px); transform:translateY(-50%); background:rgba(20,10,3,0.92); border:1px solid rgba(200,169,106,0.5); border-radius:16px; overflow:hidden; min-width:120px; }
+.lang-option { padding:10px 18px; font-family:'EB Garamond',serif; font-size:0.9rem; color:rgba(255,255,255,0.8); cursor:pointer; letter-spacing:1px; text-align:left; transition:background 0.2s ease; }
+.lang-option:hover { background:rgba(200,169,106,0.15); }
 .lang-option.active { color:#c8a96a; font-style:italic; }
 .lang-divider { height:1px; background:rgba(200,169,106,0.3); margin:0 12px; }
 
@@ -145,9 +147,9 @@ button#edit-btn:hover { background:#fff3f0; }
 
 <!-- ── LANGUAGE SWITCHER ── -->
 <div id="lang-switcher">
-  <button id="lang-btn" onclick="toggleLangMenu()">
-    <span id="lang-label">English</span>
-    <span style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #c8a96a;display:inline-block;"></span>
+<button id="lang-btn" onclick="toggleLangMenu()">
+    <span class="lang-dot"></span>
+    <span id="lang-label">EN</span>
   </button>
   <div id="lang-menu">
     <div class="lang-option active" onclick="selectLang('en','English',this)">English</div>
@@ -575,7 +577,7 @@ function toggleLangMenu() {
 
 function selectLang(lang, label, el) {
   currentLang = lang;
-  document.getElementById('lang-label').textContent = label;
+  document.getElementById('lang-label').textContent = lang === 'ar' ? 'AR' : 'EN';
   document.getElementById('lang-menu').style.display = 'none';
   document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
   el.classList.add('active');
