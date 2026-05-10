@@ -37,7 +37,7 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 @keyframes rsvpReveal { from{opacity:0; filter:blur(6px); transform:translateY(10px);} to{opacity:1; filter:blur(0); transform:translateY(0);} }
 .rsvp-reveal { animation:rsvpReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards; }
 
-#invitation { position:relative; height:100svh; overflow-y:scroll; scroll-snap-type:y proximity; -webkit-overflow-scrolling:touch; }
+#invitation { position:relative; height:100svh; overflow-y:scroll; scroll-snap-type:y mandatory; -webkit-overflow-scrolling:touch; }
 #carousel-bg-fixed { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; transform:translateZ(0); -webkit-transform:translateZ(0); will-change:transform; }
 #carousel-bg-fixed .carousel-slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1.8s ease; transform:translateZ(0); -webkit-transform:translateZ(0); }
 #carousel-bg-fixed .carousel-slide.active { opacity:1; }
