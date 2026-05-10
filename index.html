@@ -46,6 +46,7 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 #invitation-content > * { pointer-events:all; }
 
 .snap-section { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; scroll-snap-align:start; }
+.snap-section:last-of-type { min-height:100svh; justify-content:flex-start; padding-top:40px; overflow-y:auto; }
 .content-card { background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:24px; padding:40px 36px; width:90%; max-width:560px; display:flex; flex-direction:column; align-items:center; gap:16px; box-shadow:none; border:1px solid #c8a96a; }
 .hero-text { display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; }
 .hero-middle { display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
