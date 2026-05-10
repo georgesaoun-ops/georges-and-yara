@@ -644,8 +644,8 @@ function setLang(lang) {
   document.querySelector('.quote').innerHTML = t.quote + '<br><span style="color:rgba(255,255,255,0.7);">' + t.quoteRef + '</span>';
   document.querySelector('.family').innerHTML = t.family;
   document.querySelector('.invite-text').textContent = t.invite;
-  document.querySelector('.venue-date').innerHTML = t.venueDate.replace('\n', '<br>');
-  document.getElementById('venue-location').textContent = t.venueLocation;
+  document.querySelector('.venue-date').innerHTML = '<strong>' + t.venueDate.replace('\n', '<br>') + '</strong>';
+  document.getElementById('venue-location').innerHTML = '<strong>' + t.venueLocation + '</strong>';
   const venueNote = document.getElementById('venue-note');
   venueNote.textContent = t.venueNote;
   venueNote.style.fontSize = lang === 'ar' ? '1rem' : '0.75rem';
