@@ -23,7 +23,8 @@
   // ── 2. LOAD CONFIG ───────────────────────────────────────────────────────
   let cfg;
   try {
-    const res = await fetch(`invitations/${slug}.json`);
+    const base = window.location.pathname.replace(/\/[^/]*$/, "");
+    const res = await fetch(`${base}/invitations/${slug}.json`);
     if (!res.ok) throw new Error("not found");
     cfg = await res.json();
   } catch (e) {
