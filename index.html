@@ -13,7 +13,6 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 #music-btn { position:fixed; bottom:28px; right:28px; z-index:999; width:46px; height:46px; border-radius:50%; border:1px solid rgba(200,169,106,0.6); background:rgba(255,247,238,0.85); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); color:#74583e; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(116,88,62,0.12); transition:all 0.3s ease; padding:0; }
 #music-btn:hover { border-color:#c8a96a; box-shadow:0 4px 20px rgba(200,169,106,0.3); transform:scale(1.08); }
 #music-btn svg { width:18px; height:18px; transition:opacity 0.3s ease; }
-#viva-carta { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:1; font-family:'EB Garamond',serif; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.45); pointer-events:none; touch-action:none; margin:0; user-select:none; -webkit-user-select:none; }
 
 /* ── LANG SWITCHER ── */
 #lang-switcher { position:fixed; top:20px; left:0; z-index:999; display:none; }
@@ -346,12 +345,6 @@ button#edit-btn:hover { background:#fff3f0; }
 </div>
 
 <script>
-document.getElementById('invitation').addEventListener('scroll', function() {
-  const el = document.getElementById('invitation');
-  const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 50;
-  document.getElementById('viva-carta').style.display = atBottom ? 'block' : 'none';
-});
-
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8kAu5-GDYFDyE4M2BPSWXhwY4ugxJm3vYFe4X0LW35c-nk9I6xgr-TWKYcl-4ZIiRYA/exec";
 const params = new URLSearchParams(window.location.search);
 let name = null, guests = null;
@@ -676,6 +669,5 @@ function setLang(lang) {
 }
 
 </script>
-<p id="viva-carta" style="display:none;">By Viva Carta</p>
 </body>
 </html>
