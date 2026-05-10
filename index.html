@@ -346,6 +346,12 @@ button#edit-btn:hover { background:#fff3f0; }
 </div>
 
 <script>
+document.getElementById('invitation').addEventListener('scroll', function() {
+  const el = document.getElementById('invitation');
+  const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 50;
+  document.getElementById('viva-carta').style.display = atBottom ? 'block' : 'none';
+});
+
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8kAu5-GDYFDyE4M2BPSWXhwY4ugxJm3vYFe4X0LW35c-nk9I6xgr-TWKYcl-4ZIiRYA/exec";
 const params = new URLSearchParams(window.location.search);
 let name = null, guests = null;
@@ -440,7 +446,6 @@ function enterInvitation() {
   setTimeout(() => {
     landing.style.display='none';
     document.getElementById('lang-switcher').style.display='block';
-    document.getElementById('viva-carta').style.display='block';
     window.scrollTo(0,0);
     initScrollAnimations();
   }, 700);
