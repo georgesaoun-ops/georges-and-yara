@@ -127,10 +127,16 @@ button#edit-btn:hover { background:#fff3f0; }
   .rsvp-section p { font-size:clamp(1rem, 3vw, 1.2rem); }
   .content-card { padding:clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px); }
   h1 { font-size:clamp(50px, 14vw, 100px); white-space:nowrap; }
-  .rsvp-section { gap:10px; }
+.rsvp-section { gap:10px; }
   textarea { height:70px; }
   button#submit { padding:10px 40px; }
 }
+
+@media (max-width:400px) {
+  .rsvp-section { gap:8px; }
+  textarea { height:60px; }
+  .content-card { padding:16px 14px; }
+  button#submit { padding:8px 40px; font-size:1rem; }
 
 .content-card, .hero-text { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .content-card.visible, .hero-text.visible { opacity:1; transform:translateY(0); }
