@@ -331,6 +331,7 @@ let musicPlaying = false;
 
 function startMusicOnce() {
   const music = document.getElementById('bg-music');
+  if (!music) return;
   music.play().then(() => {
     document.getElementById('icon-playing').style.display='block';
     document.getElementById('icon-muted').style.display='none';
@@ -344,6 +345,7 @@ document.addEventListener('touchstart', startMusicOnce);
 
 window.addEventListener('load', () => {
   const music = document.getElementById('bg-music');
+  if (!music) return;
   music.play().then(() => {
     document.getElementById('icon-playing').style.display='block';
     document.getElementById('icon-muted').style.display='none';
