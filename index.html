@@ -13,6 +13,7 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 #music-btn { position:fixed; bottom:28px; right:28px; z-index:999; width:46px; height:46px; border-radius:50%; border:1px solid rgba(200,169,106,0.6); background:rgba(255,247,238,0.85); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); color:#74583e; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(116,88,62,0.12); transition:all 0.3s ease; padding:0; }
 #music-btn:hover { border-color:#c8a96a; box-shadow:0 4px 20px rgba(200,169,106,0.3); transform:scale(1.08); }
 #music-btn svg { width:18px; height:18px; transition:opacity 0.3s ease; }
+#viva-carta { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:999; font-family:'EB Garamond',serif; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.45); pointer-events:none; margin:0; }
 
 /* ── LANG SWITCHER ── */
 #lang-switcher { position:fixed; top:20px; left:0; z-index:999; display:none; }
@@ -339,7 +340,6 @@ button#edit-btn:hover { background:#fff3f0; }
         <textarea id="love-message" placeholder="Write your message here..."></textarea>
         <button id="submit" onclick="submitForm()" disabled>Submit</button>
       </div>
-     <p style="font-family:'EB Garamond',serif; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:16px;">By Viva Carta</p>
     </div>
 
   </div>
@@ -440,6 +440,7 @@ function enterInvitation() {
   setTimeout(() => {
     landing.style.display='none';
     document.getElementById('lang-switcher').style.display='block';
+    document.getElementById('viva-carta').style.display='block';
     window.scrollTo(0,0);
     initScrollAnimations();
   }, 700);
@@ -670,5 +671,6 @@ function setLang(lang) {
 }
 
 </script>
+<p id="viva-carta" style="display:none;">By Viva Carta</p>
 </body>
 </html>
