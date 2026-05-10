@@ -45,7 +45,7 @@ html, body { margin:0; padding:0; width:100%; min-height:100%; background-color:
 #invitation-content { position:relative; z-index:2; }
 #invitation-content > * { pointer-events:all; }
 
-.snap-section { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; scroll-snap-align:start; scroll-snap-stop:always; }
+.snap-section { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; scroll-snap-align:start; }
 .content-card { background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:24px; padding:40px 36px; width:90%; max-width:560px; display:flex; flex-direction:column; align-items:center; gap:16px; box-shadow:none; border:1px solid #c8a96a; }
 .hero-text { display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; }
 .hero-middle { display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
@@ -232,7 +232,7 @@ button#edit-btn:hover { background:#fff3f0; }
     </div>
 
     <!-- SECTION 2: Venue -->
-    <div class="snap-section">
+    <div class="snap-section" style="min-height:100svh;">
       <div class="content-card">
         <h2 class="venue-title">The Venue</h2>
         <img src="bherdoknobg.png" alt="Couvent St. Georges Bherdok" style="width:100%; max-width:340px; object-fit:contain;">
