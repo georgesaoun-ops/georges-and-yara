@@ -24,7 +24,7 @@
   let cfg;
   try {
     const base = window.location.pathname.replace(/\/[^/]*$/, "");
-    const res = await fetch(`${base}/invitations/${slug}.json`);
+    const res = await fetch(`/invitations/${slug}.json`);
     if (!res.ok) throw new Error("not found");
     cfg = await res.json();
   } catch (e) {
